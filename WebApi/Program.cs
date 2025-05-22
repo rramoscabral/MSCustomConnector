@@ -65,7 +65,7 @@ public class Program
         // Add Swagger generation
         builder.Services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Power Platorm Custom Connectors - Teched 2025", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Microsoft Power Platorm Custom Connectors", Version = "v1" });
 
             // Adds security definition for API Key
             c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
@@ -126,7 +126,7 @@ public class Program
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Power Platorm Custom Connectors - Teched 2025 V1");
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microsoft Power Platorm Custom Connectors");
             c.RoutePrefix = string.Empty; // Serve the Swagger UI at the app's root
         });
 
@@ -159,7 +159,7 @@ public class Program
         app.MapControllers();
         app.MapSwagger().RequireAuthorization();
 
-        app.MapGet("/", () => "Hello, TechEd 2025!")
+        app.MapGet("/", () => "Hello!!!")
             .WithName("RootGreeting")
             .WithTags("Root")
             .WithOpenApi(op =>
